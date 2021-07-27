@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% for msg in messages %}
+
+
+
+
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+  <strong>Hey!</strong>{{ msg }}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+    <span aria-hidden="true">&times;</span>
+
+  </button>
+
+</div>
+
+
+        
+
+
+
+        {% endfor %}
+welcome
+{{user.Name}}
+<table>
+	<tr>
+		<td>
+		age	
+		</td>
+		<td>{{user.age}}
+		</td>
+		<td><img src="{{user.Photo.url}}" height=250px width=250px>
+		</td>
+	</tr>
+	<a href="{% url 'books:update' user.id %}">update</a>
+	<a href="{% url 'books:changepassword' user.id %}">changepassword</a>
+	<a href="{% url 'books:logout' %}">logout</a>
+</table>
+</body>
+</html>
